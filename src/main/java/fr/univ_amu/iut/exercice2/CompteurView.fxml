@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
 
 <!--
   TODO exercice 2 (étape 0) : écrire la vue FXML du compteur, de zéro.
@@ -30,15 +37,34 @@
             - fx:id="boutonIncrementer"  text="+"  onAction="#incrementer"
 
        c. Un Button fx:id="boutonReinitialiser" text="Réinitialiser" onAction="#reinitialiser".
-
-  Référez-vous au FXML de l'exercice 1 et à la section "Cheat-sheet FXML" du
-  README pour la syntaxe. Les attributs fx:controller / fx:id / onAction sont
-  nouveaux à cet exercice : ils créent les ponts qui seront exploités côté
-  contrôleur (à l'étape 1).
 -->
 
-
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-      prefWidth="360.0" prefHeight="220.0"/>
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+     prefWidth="360.0" prefHeight="220.0"
+     fx:controller="fr.univ_amu.iut.exercice2.CompteurController">
+
+     <center>
+          <VBox spacing="20.0" alignment="CENTER">
+               <Label fx:id="labelCompteur" text="0"
+                    style="-fx-font-size: 48px; -fx-font-weight: bold;" />
+               <HBox spacing="10.0" alignment="CENTER">
+                    <Button fx:id="boutonDecrementer" text="−" onAction="#decrementer" />
+                    <Button fx:id="boutonIncrementer" text="+" onAction="#incrementer" />
+               </HBox>
+               <Button fx:id="boutonReinitialiser" text="Réinitialiser" onAction="#reinitialiser" />
+          </VBox>
+     </center>
+
+     <padding>
+          <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+     </padding>
+</BorderPane>
+      
+      
