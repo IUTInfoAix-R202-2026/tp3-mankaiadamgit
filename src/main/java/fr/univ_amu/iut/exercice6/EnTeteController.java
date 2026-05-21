@@ -26,6 +26,7 @@ public class EnTeteController {
    */
   @FXML
   private void initialize() {
+    boutonNouveauSite.setOnAction(e -> actionNouveauSite.run());
     // TODO exercice 6 : déclencher actionNouveauSite.run() à chaque clic sur boutonNouveauSite.
     // (Astuce : boutonNouveauSite.setOnAction(e -> ...). On évite onAction="#..." dans le FXML
     //  car la cible de l'action est fournie dynamiquement par le contrôleur parent.)
@@ -46,6 +47,15 @@ public class EnTeteController {
    * @param nombreSites le nombre courant de cartes affichées dans la liste
    */
   public void mettreAJourCompteur(int nombreSites) {
+
+    if (nombreSites == 0) {
+      labelSousTitre.setText("Aucun site déclaré");
+    } else if (nombreSites == 1) {
+      labelSousTitre.setText("1 site déclaré");
+    } else {
+      labelSousTitre.setText(nombreSites + " sites déclarés");
+    }
+
     // TODO exercice 6 : écrire dans labelSousTitre :
     //   - "Aucun site déclaré"             si nombreSites == 0
     //   - "1 site déclaré"                  si nombreSites == 1
