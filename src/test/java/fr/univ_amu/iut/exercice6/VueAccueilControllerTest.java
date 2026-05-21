@@ -54,6 +54,7 @@ class VueAccueilControllerTest {
         .isEqualTo("+ Nouveau site");
   }
 
+  @Test
   @Order(3)
   void la_liste_des_cartes_est_vide_au_demarrage(FxRobot robot) {
     VBox conteneur = robot.lookup("#conteneurCartes").queryAs(VBox.class);
